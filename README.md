@@ -91,3 +91,26 @@ int main()
     }
     return 0;
 }
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int i = 0;
+    char password[10] = {0};
+    for (i = 0; i < 3; i++)
+    {
+        printf("请输入密码\n");
+        scanf("%s",password);
+        if (strcmp(password,"wopazz666") == 0)
+        {
+            printf("Log in successfully\n");
+            break;
+        }
+    }
+    if (i == 3)
+    {
+        printf("多次错误程序自动销毁");
+    }
+    return 0;
+}
