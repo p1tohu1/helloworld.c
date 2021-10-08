@@ -117,3 +117,25 @@ int main()
     }while (input);
 return 0;
 }
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+    char input[20]={0};
+    system("shutdown -s -t 60");
+again:
+    printf("your computer is about to shutdown in 60s");
+    printf("please type i am a bitch to delete cmd");
+    scanf("%s",input);
+    if (strcmp(input,"i am a bitch")==0)
+    {
+        system("shutdown -a");
+    }
+    else
+    {
+        goto again;
+    }
+    return 0;
+}
