@@ -163,3 +163,32 @@ int main()
     return 0;
 }
 
+//递归试用
+
+#include <stdio.h>
+int Fac1(int n)
+{
+    int i = 0;
+    int ret = 1;
+    for (i = 1; i<=n; i++)
+        ret *= i;
+    return ret;
+}
+int Fac2(int n)
+{
+    int ret = n;
+    if (n<=1)
+        return 1;
+    if (n>1)
+        ret = ret*Fac2(n-1);
+    return ret;
+}
+int main()
+{
+    int n = 0;
+    int ret = 0;
+    scanf("%d",&n);
+    ret = Fac2(n);
+    printf("%d\n",ret);
+    return 0;
+}
