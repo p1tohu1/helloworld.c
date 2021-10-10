@@ -192,3 +192,49 @@ int main()
     printf("%d\n",ret);
     return 0;
 }
+
+
+//递归的不便性，运算慢的情形之一
+#include <stdio.h>
+//int count = 0;
+//int Fib(int n)               递归并不适用;
+//{
+//    int ret = 0;
+//    if (n == 3)
+//    {
+//        count++;
+//    }
+//
+//    if (n<=2)
+//        return 1;
+//    if (n>2)
+//    {
+//    ret = Fib(n-1) + Fib(n-2);
+//    }
+//    return ret;
+//}
+int Fib(int n)
+{
+    int a = 1;
+    int b = 1;
+    int c = 1;
+    int i = 0;
+    for (i=n; i>2; i--)
+    {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return c;
+}
+  
+int main()
+{
+    int n = 0;
+    int ret = 0;
+    scanf("%d",&n);
+    ret = Fib(n);
+    printf("%d\n",ret);
+    //printf("%d\n",count);
+    return 0;
+}
