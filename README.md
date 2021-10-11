@@ -238,3 +238,13 @@ int main()
     //printf("%d\n",count);
     return 0;
 }
+
+//int main()    //结构体
+//{
+//    struct book b1 = {"c语言程序设计",999};
+//    struct book* bc = &b1;
+//    printf("书名:%s\n",(*bc).name);
+//    printf("价格:%d\n",(*bc).price);
+//    return 0;
+//}
+
