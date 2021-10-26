@@ -286,3 +286,69 @@ int main()
     }
     return 0;
 }
+#include <stdio.h>     //DNA transferance.
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    char DNA[256];
+    char RNA[256];
+    scanf("%s",DNA);
+    unsigned long sz = 0;
+    sz = strlen(DNA);
+    int i = 0;
+    int sta = 0;
+    int eof = 0;
+    for (i = 0; i<sz; i++) {
+        switch (DNA[i]) {
+            case'A':
+                RNA[i]=DNA[i]='U';
+                break;
+            case'T':
+                RNA[i]=DNA[i]='A';
+                break;
+            case'C':
+                RNA[i]=DNA[i]='G';
+                break;
+            case'G':
+                RNA[i]=DNA[i]='C';
+                break;
+        }
+    }
+    for (i=0; i<sz-2; i++) {
+        if (RNA[i]=='A'&&RNA[i+1]=='U'&&RNA[i+2]=='G') {
+            sta = i;
+        }
+    }
+    for (i=sta+3; i<sz; i+=3) {
+        if (RNA[i]=='U'&&RNA[i+1]=='A'&&RNA[i+2]=='A') {
+            eof = i;
+            break;
+        }
+        if (RNA[i]=='U'&&RNA[i+1]=='A'&&RNA[i+2]=='G') {
+            eof = i;
+            break;
+        }
+        if (RNA[i]=='U'&&RNA[i+1]=='G'&&RNA[i+2]=='A') {
+            eof = i;
+            break;
+        }
+    }
+    for (i = sta+3; i<eof+3; i+=3) {
+        if (RNA[i]=='A'&&RNA[i+1]=='G'&&RNA[i+2]=='C') {
+            printf("Ser");
+        }
+        if (RNA[i]=='A'&&RNA[i+1]=='U'&&RNA[i+2]=='U') {
+            printf("Ile");
+        }
+        if (RNA[i]=='A'&&RNA[i+1]=='A'&&RNA[i+2]=='G') {
+            printf("Lys");
+        }
+        if (RNA[i]=='A'&&RNA[i+1]=='U'&&RNA[i+2]=='G') {
+            printf("Met");
+        }
+    }
+    printf("\n");
+    return 0;
+}
+
